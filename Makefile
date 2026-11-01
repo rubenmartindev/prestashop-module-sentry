@@ -14,7 +14,7 @@ export
 
 ARGS					?=
 
-COMPOSE_PROJECT_NAME	:= prestashop-senty-$(subst .,-,$(PS_VERSION_TAG))
+COMPOSE_PROJECT_NAME	:= prestashop-module-sentry-$(subst .,-,$(PS_VERSION_TAG))
 COMPOSE 				:= docker compose --project-name $(COMPOSE_PROJECT_NAME)
 COMPOSE_MODULE			:= $(COMPOSE) run --rm --user=www-data --workdir=/var/www/html/modules/extsentry prestashop
 
