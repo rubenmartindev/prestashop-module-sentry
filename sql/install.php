@@ -2,7 +2,7 @@
 
 $dbPrefix = _DB_PREFIX_;
 $sqlEngine = _MYSQL_ENGINE_;
-$moduleName = \basename(\dirname(__DIR__));
+$moduleName = 'extsentry';
 $sql = [];
 
 $sql[] = <<<SQL
