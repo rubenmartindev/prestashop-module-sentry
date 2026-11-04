@@ -1,5 +1,5 @@
 {
-  "name": "extalion/sentry",
+  "name": "rubenmartindev/sentry",
   "description": "Sentry integration with prestashop",
   "type": "prestashop-module",
   "autoload": {

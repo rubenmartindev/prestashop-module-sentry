@@ -1,7 +1,7 @@
 <?php
 
 $dbPrefix = _DB_PREFIX_;
-$moduleName = \basename(\dirname(__DIR__));
+$moduleName = 'extsentry';
 $sql = [];
 
 foreach ($sql as $query) {

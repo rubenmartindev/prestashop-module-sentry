@@ -93,10 +93,10 @@ class Installer
 
         return <<<TXT
         ###> extsentry ###
-        if (file_exists("{$rootDir}/modules/extsentry/vendor/autoload.php")) {
+        if (file_exists("{$rootDir}/modules/rubenmartindevsentry/vendor/autoload.php")) {
             require_once "{$rootDir}/config/defines.inc.php";
             require_once _PS_CONFIG_DIR_ . 'autoload.php';
-            require_once "{$rootDir}/modules/extsentry/vendor/autoload.php";
+            require_once "{$rootDir}/modules/rubenmartindevsentry/vendor/autoload.php";
 
             \Extalion\Sentry\Helper\SentryRunner::run();
         }

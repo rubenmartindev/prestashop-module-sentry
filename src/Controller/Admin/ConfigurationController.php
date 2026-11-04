@@ -59,11 +59,11 @@ class ConfigurationController extends FrameworkBundleAdminController
         }
 
         return $this->render(
-            '@Modules/extsentry/views/templates/admin/configuration.html.twig',
+            '@Modules/rubenmartindevsentry/views/templates/admin/configuration.html.twig',
             [
                 'layoutTitle' => $this->trans(
                     'Sentry configuration',
-                    'Modules.Extsentry.Admin'
+                    'Modules.Rubenmartindevsentry.Admin'
                 ),
                 'layoutHeaderToolbarBtn' => $this->getToolbarButtons()
                     ->toArray(),
@@ -122,7 +122,7 @@ class ConfigurationController extends FrameworkBundleAdminController
                     ->setClass('btn-outline-secondary')
                     ->setHelp($this->trans(
                         'Module translation',
-                        'Modules.Extsentry.Admin'
+                        'Modules.Rubenmartindevsentry.Admin'
                     ))
                     ->setHref($this->generateUrl(
                         'admin_international_translation_overview',
@@ -130,13 +130,13 @@ class ConfigurationController extends FrameworkBundleAdminController
                             'lang' => $language->iso_code,
                             'locale' => $language->locale,
                             'type' => 'modules',
-                            'selected' => 'extsentry',
+                            'selected' => 'rubenmartindevsentry',
                         ]
                     ))
                     ->setIcon('language')
                     ->setName($this->trans(
                         'Translation',
-                        'Modules.Extsentry.Admin'
+                        'Modules.Rubenmartindevsentry.Admin'
                     ))
             )
         ;

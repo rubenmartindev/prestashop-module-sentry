@@ -4,7 +4,7 @@
   <div class="alert alert-warning">
     <ul class="list-unstyled">
       <li>
-        {{ 'Config is read from %file% !'|trans({'%file%': '<span class="badge badge-warning" title="' ~ configFile ~ '">file</span>'}, 'Modules.Extsentry.Admin')|raw }}
+        {{ 'Config is read from %file% !'|trans({'%file%': '<span class="badge badge-warning" title="' ~ configFile ~ '">file</span>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
       </li>
     </ul>
   </div>
@@ -16,7 +16,7 @@
     <div class="col">
       <div class="card">
         <div class="card-header">
-          {{ 'Configuration'|trans({}, 'Modules.Extsentry.Admin') }}
+          {{ 'Configuration'|trans({}, 'Modules.Rubenmartindevsentry.Admin') }}
         </div>
 
         <div class="card-body">
@@ -28,8 +28,8 @@
               {{ form_widget(form.dsn) }}
 
               <small id="configuration_dsn_help" class="form-text text-muted">
-                {{ 'Go to settings to find it. Click %here%.'|trans({'%here%': '<a href="https://sentry.io/settings/" target="_blank">sentry.io</a>'}, 'Modules.Extsentry.Admin')|raw }}
-                {{ 'If empty Sentry will try to read it from the %env% env.'|trans({'%env%': '<strong>SENTRY_DSN</strong>'}, 'Modules.Extsentry.Admin')|raw }}
+                {{ 'Go to settings to find it. Click %here%.'|trans({'%here%': '<a href="https://sentry.io/settings/" target="_blank">sentry.io</a>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
+                {{ 'If empty Sentry will try to read it from the %env% env.'|trans({'%env%': '<strong>SENTRY_DSN</strong>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
               </small>
             </div>
           </div>
@@ -42,7 +42,7 @@
               {{ form_widget(form.error_types) }}
 
               <small id="configuration_error_types_help" class="form-text text-muted">
-                {{ 'The same values as in %php%.'|trans({'%php%': '<a href="https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting" target="_blank">php.ini</a>'}, 'Modules.Extsentry.Admin')|raw }}
+                {{ 'The same values as in %php%.'|trans({'%php%': '<a href="https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting" target="_blank">php.ini</a>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
               </small>
             </div>
           </div>
@@ -55,7 +55,7 @@
               {{ form_widget(form.sample_rate) }}
 
               <small id="configuration_sample_rate_help" class="form-text text-muted">
-                {{ 'Configures the sample rate for error events, in the range of %min% to %max%. See %sample_rate%.'|trans({'%min%': '<strong>0.0</strong>', '%max%': '<strong>1.0</strong>', '%sample_rate%': '<a href="https://docs.sentry.io/platforms/php/configuration/options/#sample-rate" target="_blank">sample_rate</a>'}, 'Modules.Extsentry.Admin')|raw }}
+                {{ 'Configures the sample rate for error events, in the range of %min% to %max%. See %sample_rate%.'|trans({'%min%': '<strong>0.0</strong>', '%max%': '<strong>1.0</strong>', '%sample_rate%': '<a href="https://docs.sentry.io/platforms/php/configuration/options/#sample-rate" target="_blank">sample_rate</a>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
               </small>
             </div>
           </div>
@@ -68,7 +68,7 @@
               {{ form_widget(form.traces_sample_rate) }}
 
               <small id="configuration_traces_sample_rate_help" class="form-text text-muted">
-                {{ 'Share of requests traced for performance monitoring, in the range of %min% to %max%. Leave empty to disable. Each traced request waits for Sentry to receive its data: keep it low. See %traces_sample_rate%.'|trans({'%min%': '<strong>0.0</strong>', '%max%': '<strong>1.0</strong>', '%traces_sample_rate%': '<a href="https://docs.sentry.io/platforms/php/configuration/options/#traces-sample-rate" target="_blank">traces_sample_rate</a>'}, 'Modules.Extsentry.Admin')|raw }}
+                {{ 'Share of requests traced for performance monitoring, in the range of %min% to %max%. Leave empty to disable. Each traced request waits for Sentry to receive its data: keep it low. See %traces_sample_rate%.'|trans({'%min%': '<strong>0.0</strong>', '%max%': '<strong>1.0</strong>', '%traces_sample_rate%': '<a href="https://docs.sentry.io/platforms/php/configuration/options/#traces-sample-rate" target="_blank">traces_sample_rate</a>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
               </small>
             </div>
           </div>
@@ -81,7 +81,7 @@
               {{ form_widget(form.server_name) }}
 
               <small id="configuration_server_name_help" class="form-text text-muted">
-                {{ 'The server name actually corresponds to the device hostname.'|trans({}, 'Modules.Extsentry.Admin') }}
+                {{ 'The server name actually corresponds to the device hostname.'|trans({}, 'Modules.Rubenmartindevsentry.Admin') }}
               </small>
             </div>
           </div>
@@ -94,7 +94,7 @@
               {{ form_widget(form.environment) }}
 
               <small id="configuration_environment_help" class="form-text text-muted">
-                {{ 'If empty Sentry will try to read it from the %env% env.'|trans({'%env%': '<strong>SENTRY_ENVIRONMENT</strong>'}, 'Modules.Extsentry.Admin')|raw }}
+                {{ 'If empty Sentry will try to read it from the %env% env.'|trans({'%env%': '<strong>SENTRY_ENVIRONMENT</strong>'}, 'Modules.Rubenmartindevsentry.Admin')|raw }}
               </small>
             </div>
           </div>
@@ -103,7 +103,7 @@
         <div class="card-footer">
           <div class="d-flex justify-content-end">
             <button class="btn btn-primary">
-              {{ 'Save'|trans({}, 'Modules.Extsentry.Admin') }}
+              {{ 'Save'|trans({}, 'Modules.Rubenmartindevsentry.Admin') }}
             </button>
           </div>
         </div>
@@ -121,5 +121,5 @@
 {% block stylesheets %}
   {{ parent() }}
 
-  <link href="{{ asset('/modules/extsentry/views/css/back.css') }}" rel="stylesheet" type="text/css"/>
+  <link href="{{ asset('/modules/rubenmartindevsentry/views/css/back.css') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}

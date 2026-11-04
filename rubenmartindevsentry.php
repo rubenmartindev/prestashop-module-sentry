@@ -11,36 +11,36 @@ require_once __DIR__ . '/vendor/autoload.php';
 use Extalion\Sentry\Exception\InstallerException;
 use Extalion\Sentry\Helper\Installer;
 
-class ExtSentry extends Module
+class RubenMartinDevSentry extends Module
 {
     private array $tabsConfig = [];
 
     public function __construct()
     {
-        $this->name = 'extsentry';
-        $this->tab = 'administration';
-        $this->version = '0.3.0';
-        $this->author = 'eXtalion.com';
-        $this->need_instance = 0;
+        $this->author = 'rubenmartin.dev';
         $this->bootstrap = true;
+        $this->name = 'rubenmartindevsentry';
+        $this->need_instance = 0;
+        $this->tab = 'administration';
+        $this->version = '0.0.0';
 
         parent::__construct();
 
         $this->displayName = $this->trans(
             'Sentry',
             [],
-            'Modules.Extsentry.Admin'
+            'Modules.Rubenmartindevsentry.Admin'
         );
         $this->description = $this->trans(
             'Sentry integration with prestashop',
             [],
-            'Modules.Extsentry.Admin'
+            'Modules.Rubenmartindevsentry.Admin'
         );
 
         $this->confirmUninstall = $this->trans(
             'Are you sure',
             [],
-            'Modules.Extsentry.Admin'
+            'Modules.Rubenmartindevsentry.Admin'
         );
 
         $this->ps_versions_compliancy = [
@@ -117,7 +117,7 @@ class ExtSentry extends Module
 
             if (!$installed) {
                 PrestaShopLogger::addLog(
-                    "[extsentry] The {$class} override could not be installed, tracing will not measure it: {$error}",
+                    "[rubenmartindevsentry] The {$class} override could not be installed, tracing will not measure it: {$error}",
                     PrestaShopLogger::LOG_SEVERITY_LEVEL_WARNING
                 );
             }
@@ -158,7 +158,7 @@ class ExtSentry extends Module
                 $tab->name[$lang['id_lang']] = $this->trans(
                     $tabConfig['name'],
                     [],
-                    'Modules.Extsentry.Admin',
+                    'Modules.RubenMartinDevSentry.Admin',
                     $lang['locale']
                 );
             }
