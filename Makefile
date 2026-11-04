@@ -16,9 +16,9 @@ ARGS					?=
 
 COMPOSE_PROJECT_NAME	:= prestashop-module-sentry-$(subst .,-,$(PS_VERSION_TAG))
 COMPOSE 				:= docker compose --project-name $(COMPOSE_PROJECT_NAME)
-COMPOSE_MODULE			:= $(COMPOSE) run --rm --user=www-data --workdir=/var/www/html/modules/extsentry prestashop
+COMPOSE_MODULE			:= $(COMPOSE) run --rm --user=www-data --workdir=/var/www/html/modules/rubenmartindevsentry prestashop
 
-module_name=extsentry
+module_name=rubenmartindevsentry
 module_dir=$(CURDIR)/../$(module_name)
 build_dir=$(module_name)
 version=$(shell grep '\->version =' $(module_name).php | grep -oe "[0-9]\+\.[0-9]\+\.[0-9]\+")
@@ -74,7 +74,7 @@ ps: ## Show container status
 shell: ## Open a shell in the PrestaShop container
 	@$(COMPOSE) exec \
 		--user=www-data \
-		--workdir=/var/www/html/modules/extsentry \
+		--workdir=/var/www/html/modules/rubenmartindevsentry \
 		prestashop bash
 
 console: ## Run the Symfony console in the PrestaShop container
