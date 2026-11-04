@@ -49,7 +49,7 @@ class RubenMartinDevSentry extends Module
         ];
     }
 
-    public function install(): bool
+    public function _install(): bool
     {
         $sqlInstallResult = include __DIR__ . '/sql/install.php';
 
@@ -58,7 +58,7 @@ class RubenMartinDevSentry extends Module
         ;
     }
 
-    public function uninstall(): bool
+    public function _uninstall(): bool
     {
         $sqlUninstallResult = include __DIR__ . '/sql/uninstall.php';
 
@@ -67,7 +67,7 @@ class RubenMartinDevSentry extends Module
         ;
     }
 
-    public function enable($forceAll = false): bool
+    public function _enable($forceAll = false): bool
     {
         $this->uninstallOverrides();
 
@@ -84,7 +84,7 @@ class RubenMartinDevSentry extends Module
         return false;
     }
 
-    public function disable($forceAll = false): bool
+    public function _disable($forceAll = false): bool
     {
         try {
             if (parent::disable($forceAll) && $this->uninstallTab()) {
@@ -192,7 +192,7 @@ class RubenMartinDevSentry extends Module
         return true;
     }
 
-    public function getContent()
+    public function _getContent()
     {
         Tools::redirectAdmin(
             $this->context->link->getAdminLink(
@@ -203,7 +203,7 @@ class RubenMartinDevSentry extends Module
         );
     }
 
-    public function isUsingNewTranslationSystem(): bool
+    public function _isUsingNewTranslationSystem(): bool
     {
         return true;
     }
