@@ -1,39 +1,27 @@
 {
-  "name": "rubenmartindev/sentry",
+  "name": "rubenmartindev/rubenmartindevsentry",
   "description": "Sentry integration with prestashop",
   "type": "prestashop-module",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "rubenmartin.dev",
+      "email": "hola@rubenmartin.dev"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
   "autoload": {
     "psr-4": {
-      "Extalion\\Sentry\\": "src/"
+      "RubenMartinDev\\Module\\Sentry\\": "src/"
     }
   },
   "config": {
+    "platform": {
+        "php": "5.6"
+    },
     "prepend-autoloader": false,
-    "allow-plugins": {
-      "php-http/discovery": true
-    }
-  },
-  "require-dev": {
-    "phpmd/phpmd": "^2.10",
-    "prestashop/php-dev-tools": "^4.2",
-    "squizlabs/php_codesniffer": "^3.6"
-  },
-  "require": {
-    "php": ">=7.4",
-    "sentry/sentry": "^3.22",
-    "php-http/guzzle7-adapter": "^1.0",
-    "nyholm/psr7": "^1.8"
-  },
-  "replace": {
-    "guzzlehttp/promises": "*",
-    "guzzlehttp/psr7": "*",
-    "psr/container": "*",
-    "psr/http-client": "*",
-    "psr/http-factory": "*",
-    "psr/http-message": "*",
-    "psr/log": "*",
-    "symfony/deprecation-contracts": "*",
-    "symfony/polyfill-php73": "*",
-    "symfony/polyfill-php80": "*"
+    "sort-packages": true
   }
 }
