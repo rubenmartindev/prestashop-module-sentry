@@ -6,6 +6,11 @@ if (!\defined('_PS_VERSION_')) {
 
 class RubenMartinDevSentry extends Module
 {
+    /**
+     * @var PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer
+     */
+    private $serviceContainer;
+
     public function __construct()
     {
         $this->author = 'rubenmartin.dev';
@@ -24,7 +29,22 @@ class RubenMartinDevSentry extends Module
 
         parent::__construct();
 
+        $this->serviceContainer = new PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer(
+            $this->name,
+            $this->getLocalPath()
+        );
+
         $this->displayName = 'Sentry';
         $this->description = $this->l('Sentry integration with prestashop');
+    }
+
+    /**
+     * @param string $serviceName
+     *
+     * @return object|null
+     */
+    public function getService($serviceName)
+    {
+        return $this->serviceContainer->getService($serviceName);
     }
 }
