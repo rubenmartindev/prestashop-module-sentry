@@ -1,11 +1,11 @@
 -include .env
 -include .env.local
 
-PS						?= 1.7.8
-PS_VERSION_TAG			:= $(PS)
+PS						?= 1.6.0.4
+PS_VERSION			:= $(PS)
 
--include .env.$(PS_VERSION_TAG)
--include .env.$(PS_VERSION_TAG).local
+-include .env.$(PS_VERSION)
+-include .env.$(PS_VERSION).local
 
 HOST_UID 				?= $(shell id -u)
 HOST_GID				?= $(shell id -g)
@@ -14,7 +14,7 @@ export
 
 ARGS					?=
 
-COMPOSE_PROJECT_NAME	:= prestashop-module-sentry-$(subst .,-,$(PS_VERSION_TAG))
+COMPOSE_PROJECT_NAME	:= prestashop-module-sentry-$(subst .,-,$(PS_VERSION))
 COMPOSE 				:= docker compose --project-name $(COMPOSE_PROJECT_NAME)
 COMPOSE_MODULE			:= $(COMPOSE) run --rm --user=www-data --workdir=/var/www/html/modules/rubenmartindevsentry prestashop
 
@@ -42,7 +42,7 @@ build: ## Build the PrestaShop image
 		$(ARGS)
 
 up: ## Start the PrestaShop container
-	@mkdir -p "./.prestashop/$(PS_VERSION_TAG)"
+	@mkdir -p "./.prestashop/$(PS_VERSION)"
 	@$(COMPOSE) up \
 		--wait \
 		--detach \
@@ -58,8 +58,8 @@ down-hard: ## Stop and remove containers, volumes and the PrestaShop installatio
 		--remove-orphans \
 		--volumes \
 		$(ARGS)
-	@if [ -d "./.prestashop/$(PS_VERSION_TAG)" ]; then \
-		rm -rf "./.prestashop/$(PS_VERSION_TAG)"; \
+	@if [ -d "./.prestashop/$(PS_VERSION)" ]; then \
+		rm -rf "./.prestashop/$(PS_VERSION)"; \
 	fi
 
 logs: ## Follow container logs
